@@ -41,7 +41,7 @@ def down_songpic(sid:str,url:str):
         urllib.request.urlretrieve(url,f"./{path[0]}/src/Song_Pic/{sid}.png")
 
 def fortune_num(user_qqid):
-    today=(list(time.localtime())[2]+24)*list(time.localtime())[1]*user_qqid
+    today=(list(time.localtime())[2]+31*list(time.localtime())[1]+77)*user_qqid
     return today >> 8
 
 Fortune=on_command("今日运势",aliases={"jrys"},priority=10)
@@ -58,7 +58,7 @@ async def Fortune_fanc(event:Event):
         _num>>=2
         if value==3:
             yes_todo.append(todo_list[count])
-        elif value==1:
+        elif value==0:
             no_todo.append(todo_list[count])
         else:
             pass
